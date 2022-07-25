@@ -15,3 +15,4 @@ tips:
 
 check the basics (typos, start server, wrong url... etc);
 help others if they ask (in a way they will benefit from it)
+test
