@@ -18,9 +18,11 @@ namespace Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+       private readonly IConfiguration _config;
+        public Startup(IConfiguration config)
         {
-            Configuration = configuration;
+            _config = config;
+            //Configuration = configuration
         }
 
         public IConfiguration Configuration { get; }
