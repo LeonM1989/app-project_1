@@ -1,18 +1,22 @@
-# app-project_1
-// 3. Getting help
+so we are going to fetch data from our api
 
-you can go through the module without mistakes...
-this will be great!
-but in any case, if you get error/stuck:
--- solve yourself first: --
+add module => go to app.module.ts
 
-try to understand what you are doing (this could be enough)
-read the error (this could be enough)
-search the error on google/so and learn from other's experience - you'r not so special or first (this could be enough) -- get personal help: --
-ask classmates (this could be enough)
-you can ask me for the code and see if it works on your computer, investigate from there
-tips:
+angular uses DI the way .net core uses it.
 
-check the basics (typos, start server, wrong url... etc);
-help others if they ask (in a way they will benefit from it)
-test
+go to app.component.ts
+
+after running check out the browser to see result
+
+no data (it's ok, we didn't interpolate 'users')
+
+we DO have errors:
+
+we do go to the error part with the printing of the error response
+
+but WTF is CORS?
+
+the server tells the browser that it accepts requests only from same origin (url+port)
+the browser is the one enforces the policy
+https://www.youtube.com/watch?v=4KHiSt0oLJ0
+next up: adding cors to our API
