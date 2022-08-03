@@ -28,7 +28,8 @@ export class AppComponent {
       // }
      
       {
-        next: (response) =>{this.users =response}, // what to do with return data;
+        next: (response) =>{this.users =response
+        console.log(response)}, // what to do with return data;
         error: (error) => {console.log(error);}, // what to do with error
         complete: () => {console.log('Finished');} //what to do when finished;  
       }
