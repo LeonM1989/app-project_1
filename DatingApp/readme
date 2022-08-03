@@ -1,0 +1,11 @@
+
+Section 3: Building a walking skeleton Part Two - Angular
+
+section intro:
+
+complete the working skeleton with the front end client angular app
+using angular cli
+review angular project files and the angular bootstrap process
+using angular HttpClient service to fetch the data
+running an angular app over HTTPS protocol
+adding external packages via npm
