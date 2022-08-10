@@ -60,7 +60,7 @@ namespace Api
             policy
             .AllowAnyHeader() // allow any headers
             .AllowAnyMethod() //allow any method (like get ,post , put ,delete)
-            .WithOrigins("http://localhost:4200") 
+            .WithOrigins("https://localhost:4200") 
             );
 
             app.UseAuthorization();
