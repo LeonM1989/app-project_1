@@ -23,14 +23,14 @@ namespace Api.Controllers
         {
          using var hmac = new HMACSHA512();
 
-         var user = new AppUser
-         {
+         var user = new AppUser{
             UserName = username,
             PasswordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password)),
             PasswordSalt = hmac.Key
          };
                _context.Users.Add(user);
                await _context.SaveChangesAsync();
+               return user;
         }
 
       
