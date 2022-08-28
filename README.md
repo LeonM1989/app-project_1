@@ -1,1 +1,1 @@
-display users on screen 
+using Dtos in registers check if the user is exisits and return bad reguest
