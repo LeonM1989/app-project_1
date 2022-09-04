@@ -7,33 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'The Dating app';
-  users : any;
-  constructor(private http: HttpClient) {}
+  // change detection in angular is done by the angular framework.
+  // it checks if the data has changed and if so it rerenders the component.
+  title: string = 'The Dating app';
+  users: any;
 
-  ngOnInit(): void{
-  this.getUsers();
+  constructor(private http: HttpClient) {
+
   }
 
-  getUsers(){
+  ngOnInit(): void {
+    // this.getUsers();
+  }
+
+
+  getUsers() {
     this.http.get('https://localhost:5001/api/users').subscribe(
-      // response => {
-      //   this.users =response;
-      // },
-      // error => {
-      //   console.log(error);
-      // },
-      // () => {
-      //   console.log('Finished')
-      // }
-     
       {
-        next: (response) =>{this.users =response
-        console.log(response)}, // what to do with return data;
-        error: (error) => {console.log(error);}, // what to do with error
-        complete: () => {console.log('Finished');} //what to do when finished;  
+        next: response => {
+          this.users = response;
+        }, // what to do with returned data
+        error: error => {console.log(error);}, // what to do with error
+        complete: () => {console.log('Finished');} // what to do when finished
       }
     )
-    
   }
+
 }
