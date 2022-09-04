@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,16 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  // use 2 way binding 
+  loggedIn: boolean = false;
   model: any = {};
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    console.log(this.model);
+  login() {
+    this.accountService.login(this.model) // returning observable (it's lazy)
+      .subscribe({
+          next: response => {
+            console.log(response);
+            this.loggedIn = true;
+          },
+          error: error => {
+            console.log(error);
+          }
+        });
+  }
+
+  // create a logout method (we'll sure deal with login/logout differently )
+  logout() {
+    this.loggedIn = false;
   }
 
 }
