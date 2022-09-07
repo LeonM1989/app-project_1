@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.getCurrnetUser();
   }
 
   login() {
@@ -30,7 +31,21 @@ export class NavComponent implements OnInit {
 
   // create a logout method (we'll sure deal with login/logout differently )
   logout() {
+    this.accountService.logout();
     this.loggedIn = false;
   }
 
+
+  //get the current user
+  getCurrnetUser(){
+    this.accountService.currentUser$.subscribe({
+      next: user =>{
+      this.loggedIn = !!user;
+    },
+     error: error => {
+      console.log(error);
+     }
+     
+    });
+  }
 }
