@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data;
-using Api.Extensions;
 using Api.interfaces;
 using Api.Services;
+using API.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,29 +21,30 @@ using Microsoft.OpenApi.Models;
 
 namespace Api
 {
-    public class Startup
+     public class Startup
     {
-       private readonly IConfiguration _config;
+
+        private readonly IConfiguration _config;
+
         public Startup(IConfiguration config)
         {
             _config = config;
-            //Configuration = configuration
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationServices(_config);
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
-            });           
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+            });
+
             services.AddCors();
+
             services.AddIdentityServices(_config);
-         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,18 +54,18 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            
+
             app.UseCors(policy =>
             policy
-            .AllowAnyHeader() // allow any headers
-            .AllowAnyMethod() //allow any method (like get ,post , put ,delete)
-            .WithOrigins("https://localhost:4200/") 
+            .AllowAnyHeader() // allow any header (like authentication related headers)
+            .AllowAnyMethod() // allow any method(HTTP Verb) (like GET, POST, PUT, DELETE)
+            .WithOrigins("https://localhost:4200") // our frontend
             );
 
             app.UseAuthentication();
