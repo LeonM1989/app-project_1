@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { User } from './models/User';
+
 import { AccountService } from './services/account.service';
 
 @Component({
@@ -19,26 +20,17 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.getUsers();
+    // this.getUsers();
     this.setCurrentUser();
   }
 
 
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe(
-      {
-        next: response => {
-          this.users = response;
-        }, // what to do with returned data
-        error: error => {console.log(error);}, // what to do with error
-        complete: () => {console.log('Finished');} // what to do when finished
-      }
-    )
-  }
+ 
 
-  setCurrentUser(){
-    const userFromLS: any = localStorage.getItem('user');
-    const user: User = JSON.parse(userFromLS);
+  setCurrentUser() {
+    const userFromLS = localStorage.getItem('user');
+    const user: User = userFromLS ? JSON.parse(userFromLS) : null;
     this.accountService.setCurrentUser(user);
   }
+
 }

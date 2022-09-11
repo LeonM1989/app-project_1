@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../services/account.service';
+import { User } from '../models/User';
+
 
 @Component({
   selector: 'app-nav',
@@ -7,45 +10,32 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  loggedIn: boolean = false;
   model: any = {};
+  currentUser$?: Observable<User>;
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService) {
+    this.currentUser$ = this.accountService.currentUser$;
+  }
 
   ngOnInit(): void {
-    this.getCurrnetUser();
+    // this.getCurrentUser();
   }
 
   login() {
     this.accountService.login(this.model) // returning observable (it's lazy)
       .subscribe({
-          next: response => {
-            console.log(response);
-            this.loggedIn = true;
-          },
-          error: error => {
-            console.log(error);
-          }
-        });
+        next: response => {
+          console.log(response);
+        },
+        error: error => {
+          console.log(error);
+        }
+
+      });
   }
 
-  // create a logout method (we'll sure deal with login/logout differently )
   logout() {
     this.accountService.logout();
-    this.loggedIn = false;
   }
 
-
-  //get the current user
-  getCurrnetUser(){
-    this.accountService.currentUser$.subscribe({
-      next: user =>{
-      this.loggedIn = !!user;
-    },
-     error: error => {
-      console.log(error);
-     }
-     
-    });
-  }
 }
