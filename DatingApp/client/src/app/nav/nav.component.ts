@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../services/account.service';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,8 +15,11 @@ export class NavComponent implements OnInit {
   model: any = {};
   currentUser$?: Observable<User>;
 
-  constructor(private accountService: AccountService, 
-    private router: Router) {
+  constructor(
+    private accountService: AccountService, 
+    private router: Router,
+    private toastr: ToastrService,
+    ) {
     this.currentUser$ = this.accountService.currentUser$;
   }
 
@@ -30,7 +34,15 @@ export class NavComponent implements OnInit {
           this.router.navigateByUrl('/members');
           console.log(response);
         },
-        error: error => {
+        error: ({error}) => {
+          if(!(error.errors && typeof error.errors == 'object')) {
+         return this.toastr.error(error) as any;
+          }
+          for (const key in error.errors){
+            if(error.errors.hasOwnProperty(key)){
+              this.toastr.error(error.errors[key]);
+            }
+          }
           console.log(error);
         }
 
