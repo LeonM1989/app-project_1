@@ -9,8 +9,9 @@ using Api.Entities;
 using Api.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Api.interfaces;
+using Api.Controllers;
 
-namespace Api.Controllers
+namespace APi.Controllers
 {
 
    public class AccountController : BaseApiController
