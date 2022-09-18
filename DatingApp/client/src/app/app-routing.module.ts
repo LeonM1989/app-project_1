@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
@@ -25,6 +26,11 @@ pathMatch: 'full'
       {path: 'lists' ,component: ListsComponent},
       {path: 'messages' ,component: MessagesComponent},
     ] 
+   },
+
+   {
+      path: 'errors',
+      component: TestErrorsComponent
    },
 
   {

@@ -14,6 +14,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component'
 import { CoreModule } from './modules/CoreModule.module';
 import { MembersModule } from './modules/members.module';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 
 
 
@@ -25,6 +26,7 @@ import { MembersModule } from './modules/members.module';
     RegisterComponent,
     ListsComponent,
     MessagesComponent,
+    TestErrorsComponent,
   ],
   imports: [
     BrowserModule,
