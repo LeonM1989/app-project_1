@@ -10,7 +10,8 @@ namespace Api.DTOs
     {
         [Required] 
         public string UserName {get; set;}
-
+         
+        [StringLength(8, MinimumLength = 4, ErrorMessage = "You must specify password between 4-8 characters")]
         [Required]
         public string Password {get; set;}
     }
