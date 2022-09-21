@@ -5,4 +5,10 @@
  <button class="btn btn-primary" (click)="get400Error()">Test 400 Errorr</button>
  <button class="btn btn-primary" (click)="get401Error()">Test 401 Errorr</button>
  <button class="btn btn-primary" (click)="get400ValidationError()">Test 400 Validation Error</button>   
+
+ <div class="row mt-5" *ngIf="validationErrors.length">
+    <ul class="text-danger">
+        <li *ngFor="let error of validationErrors">{{error}}</li>
+    </ul>
+ </div>
 </ng-container>
