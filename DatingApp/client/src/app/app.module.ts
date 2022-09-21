@@ -17,6 +17,7 @@ import { MembersModule } from './modules/members.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/Not-Found/Not-Found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 
 
@@ -29,7 +30,8 @@ import { NotFoundComponent } from './errors/Not-Found/Not-Found.component';
     ListsComponent,
     MessagesComponent,
     TestErrorsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ServerErrorComponent,
   ],
   imports: [
     BrowserModule,
