@@ -13,5 +13,10 @@ namespace Api.Entities
         public bool IsMain {get; set;}
 
         public string PublicId {get; set;}
+        
+
+        // this is 'fully definding' relationship
+        public AppUser AppUser {get; set;}
+        public int AppUserId {get; set;}
     }
 }
