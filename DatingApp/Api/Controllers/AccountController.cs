@@ -10,6 +10,7 @@ using Api.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Api.interfaces;
 using Api.Controllers;
+using API.Controllers;
 
 namespace APi.Controllers
 {

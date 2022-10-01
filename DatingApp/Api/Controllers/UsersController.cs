@@ -4,15 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Data;
 using Api.Entities;
+using API.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
-    [Authorize]
-    [ApiController]
-    
+        [Authorize]
         public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -22,7 +21,7 @@ namespace Api.Controllers
         }
 
    
-       
+      
         [HttpGet] // api/users
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
@@ -30,7 +29,7 @@ namespace Api.Controllers
            return users;
         }
 
-        
+
         [HttpGet("{id}")] // api/users/1
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
