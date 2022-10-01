@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Data;
 using Api.Entities;
+using Api.interfaces;
 using API.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,12 @@ namespace Api.Controllers
         [Authorize]
         public class UsersController : BaseApiController
     {
-        private readonly DataContext _context;
-        public UsersController(DataContext context)
+        private readonly IUserRepository _userRepository;
+   
+        public UsersController(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
+        
         }
 
    
@@ -25,16 +28,16 @@ namespace Api.Controllers
         [HttpGet] // api/users
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-           var users = await _context.Users.ToListAsync();
-           return users;
+           var users = await _userRepository.GetUsersAsync();
+           return Ok(users);
         }
 
-
-        [HttpGet("{id}")] // api/users/1
-        public async Task<ActionResult<AppUser>> GetUser(int id)
+        
+        [HttpGet("{username}")] // api/users/lisa
+        public async Task<ActionResult<AppUser>> GetUser(string username)
         {
-            var user = await _context.Users.FindAsync(id);
-            return user;
+            return await _userRepository.GetUserByUserNameAsync(username);
         }
+        
     }
 }
