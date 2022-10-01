@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
+    [Authorize]
     [ApiController]
     
         public class UsersController : BaseApiController
@@ -20,8 +21,8 @@ namespace Api.Controllers
             _context = context;
         }
 
-        //[Authorize]
-        [AllowAnonymous] 
+   
+       
         [HttpGet] // api/users
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
@@ -29,7 +30,7 @@ namespace Api.Controllers
            return users;
         }
 
-        [Authorize]
+        
         [HttpGet("{id}")] // api/users/1
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
