@@ -82,3 +82,9 @@ D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Micro
 D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
 D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Data\UserSeedData.json
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\AutoMapper.dll
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\Leon\class_Project\First_P\app-project_1\DatingApp\Api\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

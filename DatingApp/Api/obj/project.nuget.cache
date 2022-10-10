@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kvbce30rTx6WtCMyz1WmBMq68hDnVUQn/VeV1q6is6O+MYmEnZe7dv5DypyMgJtc1QAnnViBEZgru0mzF0MMkw==",
+  "dgSpecHash": "wLcuOE7ezTkzBsLarGXoVYA1tRG37tgtVUO0n1xePndP2r6MPNezWjsRv4+y75b91bAP5h8i0JGdKtVRlnR7kQ==",
   "success": true,
-  "projectFilePath": "d:\\Leon\\class_Project\\First_P\\app-project_1\\DatingApp\\Api\\Api.csproj",
+  "projectFilePath": "D:\\Leon\\class_Project\\First_P\\app-project_1\\DatingApp\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leon.M\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Leon.M\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -115,8 +115,7 @@
     "C:\\Users\\Leon.M\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Leon.M\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Leon.M\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Leon.M\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Leon.M\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\Leon.M\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
