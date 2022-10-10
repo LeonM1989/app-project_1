@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Api.Extensions;
+
 
 namespace Api.Entities
 {
@@ -36,9 +36,9 @@ namespace Api.Entities
 
           public ICollection<Photo> Photos{get; set;}
 
-          public int GetAge()
-          {
-            return DateOfBirth.CalculateAge();
-          }
+          // public int GetAge()
+          // {
+          //   return DateOfBirth.CalculateAge();
+          // }
     }
 }

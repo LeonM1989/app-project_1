@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.DTOs;
 using Api.Entities;
 
 namespace Api.interfaces
@@ -15,6 +16,10 @@ namespace Api.interfaces
         Task<AppUser> GetUsersByIdAsync(int id);
         Task<AppUser> GetUserByUserNameAsync(string username);
         Task<IEnumerable<AppUser>> GetUsersAsync();
+
+        Task<IEnumerable<MemberDto>> GetMembersAsync();
+
+        Task<MemberDto> GetMemberAsync(string username);
 
         
     }

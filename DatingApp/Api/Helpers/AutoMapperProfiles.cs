@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.DTOs;
 using Api.Entities;
+using Api.Extensions;
 using AutoMapper;
 
 namespace Api.Helpers
@@ -18,6 +19,12 @@ namespace Api.Helpers
                 dest => dest.PhotoUrl,
                 opt => {
                     opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url);
+                }
+            )
+            .ForMember(
+                dest => dest.Age,
+                opt =>{
+                    opt.MapFrom(d => d.DateOfBirth.CalculateAge());
                 }
             );
 
