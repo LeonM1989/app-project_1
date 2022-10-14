@@ -13,7 +13,7 @@ namespace Api.Helpers
     {
        public AutoMapperProfiles()
         {
-            //we want to map AppUser ==> MemberDto
+            //we want to map AppUser ==> MemberDto//
             CreateMap<AppUser, MemberDto>()
             .ForMember(
                 dest => dest.PhotoUrl,
