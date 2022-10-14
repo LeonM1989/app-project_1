@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MemberDetailComponent } from '../members/member-detail/member-detail.component';
 import { MemberListComponent } from '../members/member-list/member-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MemberCardComponent } from '../members/member-card/member-card.component';
 
 
 const routes: Routes = [
@@ -17,11 +18,13 @@ const routes: Routes = [
   declarations: [
     MemberDetailComponent,
     MemberListComponent,
+    MemberCardComponent
   ],
   exports: [
     MemberDetailComponent,
     MemberListComponent, 
     RouterModule,
+    MemberCardComponent
   ]
 })
 export class MembersModule { }
