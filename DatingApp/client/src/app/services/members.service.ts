@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Member } from '../models/member';
 
-const httpOptions ={
+const httpOptions = {
   headers: new HttpHeaders({
-    authorization: 'Bearer' + JSON.parse(localStorage.getItem('user')as string)?.token
+    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user') as string)?.token
   })
 }
 
@@ -14,15 +14,15 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class MembersService {
-baseUrl = environment.apiUrl;
-constructor(private http: HttpClient) { }
+  baseUrl = environment.apiUrl;
 
-getMemebers(): Observable<Member[]>{
-  return this.http.get<Member[]>(`${this.baseUrl}users`, httpOptions);
-}
+  constructor(private http: HttpClient) { }
 
-getMember(username: string): Observable<Member>{
-  return this.http.get<Member>(`${this.baseUrl}users/${username}`, httpOptions);
-}
+  getMembers(): Observable<Member[]> {
+    return this.http.get<Member[]>(`${this.baseUrl}users`, httpOptions);
+  }
 
+  getMember(username: string): Observable<Member> {
+    return this.http.get<Member>(`${this.baseUrl}users/${username}`, httpOptions);
+  }
 }
