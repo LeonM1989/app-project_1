@@ -7,6 +7,7 @@ import { User } from '../models/User';
 
 
 
+
 @Injectable({
   providedIn: 'root' //an injectable singleton (does not destroys until we close our app)
 })
@@ -31,6 +32,7 @@ export class AccountService {
 
   setCurrentUser(user: User) {
     this.currentUserSource$.next(user);
+
   }
 
   logout() {
