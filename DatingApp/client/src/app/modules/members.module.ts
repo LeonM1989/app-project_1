@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MemberDetailComponent } from '../members/member-detail/member-detail.component';
 import { MemberListComponent } from '../members/member-list/member-list.component';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { MemberCardComponent } from '../members/member-card/member-card.component';
-
+import { SharedModule } from './shared.module';
 
 const routes: Routes = [
-  {path: '',component: MemberListComponent, pathMatch: 'full'},
-  {path: ':id', component: MemberDetailComponent},
+  {path:'',component: MemberListComponent, pathMatch: 'full'},
+  {path:':username',component: MemberDetailComponent}
 ]
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    SharedModule
   ],
   declarations: [
     MemberDetailComponent,
@@ -22,9 +24,9 @@ const routes: Routes = [
   ],
   exports: [
     MemberDetailComponent,
-    MemberListComponent, 
-    RouterModule,
-    MemberCardComponent
+    MemberListComponent,
+    MemberCardComponent,
+    RouterModule
   ]
 })
 export class MembersModule { }
