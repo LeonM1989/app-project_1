@@ -28,7 +28,7 @@ namespace Api.Entities
           public string Gender {get; set;}
 
           public string Introduction {get; set;}
-          public string LokingFor {get; set;}
+          public string lookingFor {get; set;}
           public string Interests {get; set;}
 
           public string City {get; set;}
