@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Api.DTOs;
 using Api.Entities;
 using Api.Extensions;
+using API.DTOs;
 using AutoMapper;
 
 namespace Api.Helpers
@@ -30,6 +31,9 @@ namespace Api.Helpers
 
             //we want to mao Photo ==> PhotoDto
             CreateMap<Photo, PhotoDto>();
+
+            //maping MemberUpdateDto => AppUser
+            CreateMap<MemberUpdateDTO, AppUser>();
         }
     }
 }

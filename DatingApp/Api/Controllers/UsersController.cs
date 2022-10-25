@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using API.DTOs;
 
 namespace Api.Controllers
 {
@@ -44,6 +46,20 @@ namespace Api.Controllers
             //var userToReturn = _mapper.Map<MemberDto>(rtn);
             return rtn;
         }
-        
+
+        [HttpPut] // api/users PUT
+        public async Task<ActionResult> UpdateUser(MemberUpdateDTO memberUpdateDTO)
+        {
+            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userRepository.GetUserByUserNameAsync(username);
+
+            _mapper.Map(memberUpdateDTO, user);
+
+            _userRepository.Update(user);
+
+            if (await _userRepository.SaveAllAsync())  return NoContent();
+
+            return BadRequest("Failed to update user");
+        }
     }
 }

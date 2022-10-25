@@ -19,7 +19,7 @@ export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') EForm: NgForm 
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event:any){
    if(this.EForm.dirty){
-    $event.returnValue = true;
+    $event.returnValue = true
    } 
   }
   constructor(
@@ -40,9 +40,9 @@ export class MemberEditComponent implements OnInit {
 
   updateMember() {
 
-   
+
       this.toastr.success('Profile updated successfully');
       this.EForm.reset(this.member);
-    
+
   }
 }
