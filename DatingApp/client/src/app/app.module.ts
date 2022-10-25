@@ -21,6 +21,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { NotFoundComponent } from './errors/Not-Found/Not-Found.component';
 import { CoreModule } from './modules/CoreModule.module';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CoreModule } from './modules/CoreModule.module';
     MessagesComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserModule,
