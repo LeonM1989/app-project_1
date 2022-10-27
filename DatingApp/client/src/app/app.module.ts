@@ -23,6 +23,7 @@ import { NotFoundComponent } from './errors/Not-Found/Not-Found.component';
 import { CoreModule } from './modules/CoreModule.module';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { SharedModule } from './modules/shared.module';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,12 @@ import { SharedModule } from './modules/shared.module';
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })
